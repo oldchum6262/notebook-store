@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Minimal Single-Page Website</title>
-    <meta name="description" content="Minimal Single-Page Website — built on Replit. Update this description to reflect the app." />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Minimal Single-Page Website" />
-    <meta property="og:description" content="Minimal Single-Page Website — built on Replit. Update this description to reflect the app." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Minimal Single-Page Website" />
-    <meta name="twitter:description" content="Minimal Single-Page Website — built on Replit. Update this description to reflect the app." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <head>  
+    <link rel="stylesheet" href="style.css">
+    
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <!-- 1. The outer frame container  -->
+    <div class="notebook-card">
+      <!-- THE WISHLIST HEART TOGGLE -->
+      <input type="checkbox" id="wishlist-1" class="secret-checkbox" />
+      <label for="wishlist-1" class="heart-badge" title="Add to Wishlist">&#9825;</label>
+
+
+  <!--  2. The Product Image   -->
+      <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400" alt="Classic Leather Journal" class="notebook-img"/> 
+
+  <!--  3. The Text Container   -->
+      <div class="card-body">
+      <h2 class="notebook-title">Classic Leather Journal</h2>
+      <p class="notebook-description">Handcrafted lay-flat notebook with 100gsm acid-free dot grid paper.         </p>
+
+  <!-- 4. Price and Action Footer   -->
+        <div class="card-footer">
+          <span class="notebook-price">$24.00</span>
+            <a href="#" class="buy-button">View Details</a>
+        </div>
+      </div>
+    </div>
+ 
+  
   </body>
 </html>

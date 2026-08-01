@@ -1,0 +1,129 @@
+
+/* Page Background (The Desk)  */
+
+body {
+  background-color: beige; /* Beige texture background */
+  font-family: Arial, sans-serif;
+  display: flex; 
+  justify-content: center; /*  Centers our card horizontally */
+  align-items: center;     /*  Centers our card vertically  */
+  min-height: 100vh;         /* Takes up full height of the viewport */
+  margin: 0;
+}
+
+/* 2. The Outer Card Frame */
+.notebook-card {
+  width: 300px;              /* Keeps the card compact! */
+  background-color: #ffffff; /* Clean white card body */
+
+/* --- OUR TWO MAGIC TOOLS --- */
+border-radius: 16px;       /* 1. Sands off the sharp 90-degree corners */
+box-shadow: 10px 15px 25px rgba(0, 0, 0, 0.1); /* 2. Lifts it off the background! */
+overflow: hidden;          /* Keeps child elements (like the image) inside the rounded corners */
+transition: transform 0.4s ease, box-shadow 0.4s ease; /* Prepares us for hover effects! */
+}
+
+/* 4. The Card Body Padding */
+.card-body {
+  padding: 20px;
+}
+.notebook-title {
+  margin: 0 0 8px 0;
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+/* 3. The Product Image */
+.notebook-img {
+  width: 100%;               /* Fills the full width of the card */
+  height: 200px;             /* Gives the photo a fixed height */
+  object-fit: cover;         /* Crops the photo nicely without distorting it */
+}
+.notebook-description {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #7f8c8d;
+  line-height: 1.4;
+}
+
+/* 5. Footer Layout */
+.card-footer {
+  display: flex;
+  justify-content: space-between; /* Pushes price to the left, button to the right! */
+  align-items: center;
+}
+.notebook-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #27ae60;            /* Soft notebook green price */
+}
+/* 6. The Buy Button */
+.buy-button {
+  background-color: #2c3e50;
+  color: #ffffff;
+  text-decoration: none;      /* Removes the default link underline */
+  padding: 10px 16px;
+  border-radius: 8px;        /* Slightly rounded button corners */
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+.buy-button:hover {
+  background-color: sandybrown; /* Turns warm orange when hovered! */
+}
+/* When you float over the card: */
+.notebook-card:hover {
+  /* 1. Moves the card UP by 8 pixels */
+  transform: translateY(-8px); 
+
+  /* 2. Drops the shadow deeper and makes it softer to match the height! */
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15); 
+}
+
+/* 1. Position the heart over the top-right corner of the image */
+.notebook-card {
+  position: relative; /* Allows child elements to position relative to the card! */
+}
+
+/* 2. Hide the checkbox using our hashtag # ID trick */
+#wishlist-1 {
+  display: none;
+}
+
+/* 3. Style the heart button label */
+.heart-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%; /* Perfect circle! */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #7f8c8d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 2; /* Sits above the image */
+}
+
+.heart-badge:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+}
+
+/* 4. THE CHECKBOX HACK MAGIC: When checked, change heart to solid red! */
+#wishlist-1:checked + .heart-badge {
+  color: #e74c3c;
+  content: ""; /* Keeps layout tight */
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+/* Switches the symbol from outline ♡ to filled ♥ when checked */
+#wishlist-1:checked  + .heart-badge::before {
+  content: "\2665"; /* Unicode character for solid heart */
+}
+
